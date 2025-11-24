@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>AlensaBox · AlensaGuardian 2.0 — Seguridad para autónomos y micro-PYME</title>
+	<meta name="description" content="AlensaBox: tu Guardián Físico. Dispositivo todo-en-uno preconfigurado para proteger tu oficina sin complicaciones. Pack Básico 29€/mes · Pro 49€/mes con alquiler de la caja." />
+	<style>
+		/* Tipografía y colores */
+		:root{
+			--bg:#0f1724;
+			--card:#0b1220;
+			--muted:#9aa6bd;
+			--accent:#4f9cff;
+			--accent-2:#00d4b8;
+			--glass: rgba(255,255,255,0.04);
+			--glass-2: rgba(255,255,255,0.03);
+		}
+		*{box-sizing:border-box}
+		body{margin:0;background:linear-gradient(180deg,var(--bg) 0%, #071226 100%);color:#e6eef8;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased;}
+		a{color:inherit}
+		.container{max-width:1120px;margin:36px auto;padding:28px}
+		/* Header */
+		header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+		.brand{display:flex;align-items:center;gap:14px}
+		.logo{
+			width:56px;height:56px;border-radius:12px;
+			background:linear-gradient(135deg,var(--accent),var(--accent-2));
+			display:flex;align-items:center;justify-content:center;font-weight:800;color:#022036;font-size:18px;box-shadow:0 8px 30px rgba(79,156,255,0.12)
+		}
+		nav a{margin-left:16px;color:var(--muted);text-decoration:none;font-weight:600}
+		nav a:hover{color:#fff}
+		/* Hero */
+		.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:22px;align-items:center}
+		.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:16px;box-shadow:0 12px 40px rgba(2,12,27,0.6);border:1px solid var(--glass)}
+		h1{font-size:2.05rem;margin:0 0 10px;line-height:1.05}
+		.lead{color:var(--muted);margin-bottom:16px;font-size:1rem}
+		.cta-row{display:flex;gap:12px;align-items:center}
+		.btn{
+			padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+			color:#022036;box-shadow:0 8px 24px rgba(0,0,0,0.25);transform:translateY(0);transition:transform .18s ease, box-shadow .18s ease;
+		}
+		.btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(79,156,255,0.14)}
+		.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef8}
+		.badge{display:inline-block;background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--accent-2);font-weight:700;margin-bottom:12px}
+		/* Feature list */
+		.features{display:flex;gap:12px;margin-top:18px}
+		.feature{background:var(--glass-2);padding:12px;border-radius:12px;flex:1;display:flex;gap:10px;align-items:center;border:1px solid rgba(255,255,255,0.02)}
+		.feature svg{width:36px;height:36px;flex-shrink:0}
+		.feature .txt{font-size:0.95rem;color:var(--muted)}
+		/* Right card */
+		.right-panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid var(--glass);box-shadow:0 10px 30px rgba(2,12,27,0.6)}
+		.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+		.price{font-size:1.6rem;font-weight:800;color:#fff}
+		.small{font-size:0.95rem;color:var(--muted)}
+		.micro{font-size:0.85rem;color:var(--muted)}
+		/* Pricing */
+		.pricing{display:flex;gap:14px;margin-top:22px}
+		.plan{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;flex:1;border:1px solid rgba(255,255,255,0.03)}
+		.plan.pro{background:linear-gradient(90deg, rgba(79,156,255,0.06), rgba(0,212,184,0.03));border:1px solid rgba(79,156,255,0.12);box-shadow:0 12px 30px rgba(79,156,255,0.06)}
+		.plan .title{font-weight:800;font-size:1.05rem}
+		.price-tag{font-size:1.6rem;font-weight:900;color:#fff;margin-top:8px}
+		.price-sub{color:var(--muted);font-size:0.9rem}
+		.feature-list{margin-top:10px;color:var(--muted);font-size:0.95rem}
+		.select-plan{margin-top:12px}
+		/* Testimonials */
+		.testimonials{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+		.testimonial{background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+		.testimonial p{margin:0;color:var(--muted)}
+		.testimonial .who{margin-top:12px;font-weight:700;color:#fff}
+		/* FAQ */
+		.faq{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+		.q{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+		/* Contact form */
+		form{margin-top:12px}
+		input, textarea, select{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef8;padding:10px;border-radius:8px;width:100%}
+		.btn-full{width:100%;margin-top:10px}
+		.result{margin-top:10px;color:#d2f8ee}
+		/* Footer */
+		footer{margin-top:38px;color:var(--muted);font-size:0.9rem;text-align:center;padding-bottom:28px}
+		/* Responsive */
+		@media (max-width:980px){.hero{grid-template-columns:1fr;}.testimonials{grid-template-columns:1fr}.pricing{flex-direction:column}}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div class="brand">
+				<div class="logo">AB</div>
+				<div>
+					<div style="font-weight:800;font-size:1.05rem">AlensaBox</div>
+					<div style="font-size:0.85rem;color:var(--muted)">AlensaGuardian 2.0 — tu Guardián Físico</div>
+				</div>
+			</div>
+			<nav>
+				<a href="#product">Producto</a>
+				<a href="#pricing">Planes</a>
+				<a href="#contact">Contacto</a>
+			</nav>
+		</header>
+
+		<!-- Hero -->
+		<section class="hero">
+			<div class="hero-card">
+				<span class="badge">Lanzamiento</span>
+				<h1>AlensaBox — Seguridad perimetral plug & play para autónomos</h1>
+				<p class="lead">Un Mini‑PC reacondicionado con nuestra suite open‑source preinstalada. Enchufa la caja al router y protege todos tus dispositivos al instante.</p>
+
+				<div class="cta-row">
+					<button class="btn" onclick="scrollToPricing()">Ver planes</button>
+					<button class="btn ghost" onclick="document.getElementById('contact').scrollIntoView()">Solicitar demo</button>
+				</div>
+
+				<div class="features" aria-hidden="false">
+					<div class="feature">
+						<svg viewBox="0 0 24 24" fill="none"><path d="M12 2v6" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 8v10a2 2 0 0 0 2 2h8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+						<div>
+							<div style="font-weight:700">Plug & Play</div>
+							<div class="txt">Instalación en 5 minutos, sin tocar equipos.</div>
+						</div>
+					</div>
+
+					<div class="feature">
+						<svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M7 8v8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+						<div>
+							<div style="font-weight:700">Open Source</div>
+							<div class="txt">OPNsense, Wazuh, Suricata, Pi‑hole.</div>
+						</div>
+					</div>
+
+					<div class="feature">
+						<svg viewBox="0 0 24 24" fill="none"><path d="M12 3v2" stroke="#fff" stroke-width="1.6"/><path d="M5.6 7.6l1.4 1.4" stroke="#fff" stroke-width="1.6"/></svg>
+						<div>
+							<div style="font-weight:700">Ahorro</div>
+							<div class="txt">Hardware reacondicionado y tarifas pensadas para autónomos.</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Testimonials -->
+				<div class="testimonials" style="margin-top:20px">
+					<div class="testimonial">
+						<p>"Con AlensaBox no hemos perdido horas configurando equipos. Lo enchufamos y listo."</p>
+						<div class="who">— Marta, consultora</div>
+					</div>
+					<div class="testimonial">
+						<p>"El equipo de soporte nos ayudó a migrar sin impacto. Tranquilidad total."</p>
+						<div class="who">— Pablo, taller creativo</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Right panel: quick info + pricing teaser -->
+			<aside class="right-panel">
+				<div style="display:flex;justify-content:space-between;align-items:center">
+					<div>
+						<div style="font-weight:800;font-size:1.05rem">AlensaGuardian 2.0</div>
+						<div class="micro">Dispositivo físico + gestión remota</div>
+					</div>
+					<div style="text-align:right">
+						<div class="price">Protege hasta 25 dispositivos</div>
+						<div class="small">Soporte & actualizaciones</div>
+					</div>
+				</div>
+
+				<div style="margin-top:14px" id="pricingSummary">
+					<div class="price-row">
+						<div>
+							<div class="small">Pack Básico</div>
+							<div class="price">29€/mes</div>
+						</div>
+						<div style="text-align:right">
+							<div class="small">Pack Pro (con caja)</div>
+							<div class="price">49€/mes</div>
+						</div>
+					</div>
+
+					<div style="margin-top:14px;display:flex;gap:8px">
+						<button class="btn ghost" onclick="selectPlan('Básico')">Elegir Básico</button>
+						<button class="btn" onclick="selectPlan('Pro')">Elegir Pro</button>
+					</div>
+
+					<div class="small" style="margin-top:12px">Promesa: instalación remota o in situ. Reducción de fricción y gestión centralizada para que te centres en tu negocio.</div>
+				</div>
+			</aside>
+		</section>
+
+		<!-- Pricing details -->
+		<section id="pricing" style="margin-top:26px">
+			<h2 style="margin:0 0 8px">Planes</h2>
+			<p class="micro">Dos opciones sencillas: escoge ahorro o comodidad total con la caja.</p>
+
+			<div class="pricing">
+				<div class="plan" role="region" aria-label="Pack Básico">
+					<div class="title">Pack Básico</div>
+					<div class="price-tag">29€ <span class="price-sub">/ mes</span></div>
+					<div class="feature-list">
+						<ul>
+							<li>Filtrado web y bloqueo de malware</li>
+							<li>Filtro de email</li>
+							<li>Soporte estándar</li>
+						</ul>
+					</div>
+					<div class="select-plan">
+						<button class="btn ghost" onclick="selectPlan('Básico')">Seleccionar</button>
+					</div>
+				</div>
+
+				<div class="plan pro" role="region" aria-label="Pack Pro">
+					<div class="title">Pack Pro — AlensaGuardian Pro</div>
+					<div class="price-tag">49€ <span class="price-sub">/ mes</span></div>
+					<div class="feature-list">
+						<ul>
+							<li>Incluye alquiler de AlensaBox</li>
+							<li>Monitorización avanzada (Wazuh, Suricata)</li>
+							<li>Soporte prioritario y actualizaciones</li>
+						</ul>
+					</div>
+					<div class="select-plan">
+						<button class="btn" onclick="selectPlan('Pro')">Seleccionar</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Strategic impact -->
+			<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+				<div style="flex:1;min-width:220px;background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)">
+					<strong>Aumenta ARPU</strong>
+					<div class="micro">De 29€ a 49€. Opcional +15€/mes por portátil reacondicionado.</div>
+				</div>
+				<div style="flex:1;min-width:220px;background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)">
+					<strong>Barrera de salida</strong>
+					<div class="micro">Más difícil para el cliente abandonar un servicio con hardware físico.</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section style="margin-top:22px">
+			<h3>Preguntas frecuentes</h3>
+			<div class="faq">
+				<div class="q"><strong>¿Necesito tocar mis ordenadores?</strong><p class="micro">No con Pack Pro. En Pack Básico se puede requerir configuración de DNS o instalación de cliente.</p></div>
+				<div class="q"><strong>¿Qué hardware usáis?</strong><p class="micro">Mini‑PCs reacondicionados (HP/Dell/Lenovo SFF) para sostenibilidad y coste eficiente.</p></div>
+				<div class="q"><strong>¿Puedo probarlo?</strong><p class="micro">Sí, solicita demo y coordinamos una instalación piloto.</p></div>
+				<div class="q"><strong>¿Cuántos dispositivos protege?</strong><p class="micro">Por defecto hasta 25 dispositivos; opciones escalables.</p></div>
+			</div>
+		</section>
+
+		<!-- Contact -->
+		<section id="contact" style="margin-top:22px">
+			<h2>Contacto / Solicitar demo</h2>
+			<p class="micro">Rellena el formulario y te contactamos en menos de 48 horas.</p>
+
+			<form id="contactForm" onsubmit="submitForm(event)" style="max-width:720px">
+				<label class="micro">Nombre o empresa</label>
+				<input type="text" id="name" placeholder="Nombre o empresa" required>
+
+				<label class="micro">Correo electrónico</label>
+				<input type="email" id="email" placeholder="correo@ejemplo.com" required>
+
+				<label class="micro">Plan de interés</label>
+				<select id="plan">
+					<option value="Básico">Pack Básico — 29€/mes</option>
+					<option value="Pro">Pack Pro — 49€/mes</option>
+				</select>
+
+				<label class="micro">Mensaje (opcional)</label>
+				<textarea id="message" rows="4" placeholder="Cuéntanos brevemente tus necesidades"></textarea>
+
+				<button class="btn btn-full" type="submit">Solicitar demo</button>
+				<div id="formResult" class="result" aria-live="polite"></div>
+			</form>
+		</section>
+
+		<footer>
+			<div>AlensaTech · AlensaBox — Seguridad sostenible para autónomos y micro-PYME.</div>
+		</footer>
+	</div>
+
+	<script>
+		// Navegación y selección
+		function scrollToPricing(){ document.getElementById('pricing').scrollIntoView({behavior:'smooth'}); }
+
+		function selectPlan(plan){
+			const sel = document.getElementById('plan');
+			if(sel) sel.value = plan;
+			document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+			const res = document.getElementById('formResult');
+			if(res){ res.textContent = 'Has seleccionado: ' + plan + '. Completa el formulario para solicitar demo.'; }
+			// Micro-animación: briefly pulse selected buttons
+			document.querySelectorAll('.btn').forEach(b=>{ b.style.transform='translateY(-6px)'; setTimeout(()=>b.style.transform='',160); });
+		}
+
+		// Simulación de envío con validación y feedback atractivo
+		function submitForm(e){
+			e.preventDefault();
+			const name = document.getElementById('name').value.trim();
+			const email = document.getElementById('email').value.trim();
+			const plan = document.getElementById('plan').value;
+			const message = document.getElementById('message').value.trim();
+			const result = document.getElementById('formResult');
+
+			if(!name || !email){ result.textContent = 'Por favor, completa nombre y correo.'; result.style.color = '#ffcccb'; return; }
+
+			result.style.color = '#d2f8ee';
+			result.textContent = 'Enviando...';
+
+			// Simular petición asíncrona
+			setTimeout(()=>{
+				result.textContent = 'Gracias, ' + name + '. Hemos recibido tu solicitud para el plan ' + plan + '. Nos pondremos en contacto en breve.';
+			}, 900);
+		}
+	</script>
+</body>
+</html>
